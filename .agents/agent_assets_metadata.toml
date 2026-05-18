@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "AlOjp8ldjJSNQNv-d3eQ_"
+uri = "file://artifacts/tuition-institute/public/hero-classroom.png"
+type = "image"
+title = "Hero classroom scene"
+
+[[generated]]
+id = "amCAcGHvs-NtP9nm7nxQh"
+uri = "file://artifacts/tuition-institute/public/about-founder.png"
+type = "image"
+title = "About founder portrait"
+
+[[generated]]
+id = "oQLQEuqFx_sbsjJnHtgiE"
+uri = "file://artifacts/tuition-institute/public/about-students.png"
+type = "image"
+title = "About students studying"
+
+[[generated]]
+id = "3LetwsJ1NAX6UPAhqvXlu"
+uri = "file://artifacts/tuition-institute/public/why-classroom.png"
+type = "image"
+title = "Why choose us classroom"
+
+[[generated]]
+id = "KzGzN05wtkFLalvb88I1M"
+uri = "file://artifacts/tuition-institute/public/faculty-math.png"
+type = "image"
+title = "Faculty Math"
+
+[[generated]]
+id = "HTVOGpp_Z4FdmUMEUMpPR"
+uri = "file://artifacts/tuition-institute/public/faculty-science.png"
+type = "image"
+title = "Faculty Science"
+
+[[generated]]
+id = "EBHUy0jc5QWtBUhxda74k"
+uri = "file://artifacts/tuition-institute/public/faculty-english.png"
+type = "image"
+title = "Faculty English"
+
+[[generated]]
+id = "shvOjvGU206zZs_mmmwc1"
+uri = "file://artifacts/tuition-institute/public/faculty-commerce.png"
+type = "image"
+title = "Faculty Commerce"
+
+[[generated]]
+id = "-fc5-nUAmikp68egVOJie"
+uri = "file://artifacts/tuition-institute/public/faculty-biology.png"
+type = "image"
+title = "Faculty Biology"
+
+[[generated]]
+id = "GIVxTl5FZE0VHstyxixEW"
+uri = "file://artifacts/tuition-institute/public/faculty-sst.png"
+type = "image"
+title = "Faculty SST"

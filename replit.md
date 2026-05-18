@@ -1,10 +1,11 @@
-# [Project name]
+# BrightMinds Academy
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A premium tuition and coaching institute showcase website designed to build deep trust with parents/students and generate admissions inquiries.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/tuition-institute run dev` — run the frontend (port varies)
+- `pnpm --filter @workspace/api-server run dev` — run the API server
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
@@ -14,6 +15,7 @@ _Replace the heading above with the project's name, and this line with one sente
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
+- Frontend: React + Vite, Tailwind CSS v4, Framer Motion, shadcn/ui, react-hook-form
 - API: Express 5
 - DB: PostgreSQL + Drizzle ORM
 - Validation: Zod (`zod/v4`), `drizzle-zod`
@@ -22,15 +24,23 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `lib/api-spec/openapi.yaml` — API contract (source of truth)
+- `lib/db/src/schema/inquiries.ts` — Inquiries table schema
+- `artifacts/tuition-institute/src/` — Frontend React app
+- `artifacts/tuition-institute/src/components/` — All section components
+- `artifacts/api-server/src/routes/inquiries.ts` — Inquiry submission endpoint
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Presentation-first showcase site with a single inquiry form POST endpoint
+- All 12 sections as separate component files for maintainability
+- Counter animations via custom useCountUp hook + IntersectionObserver
+- Frosted glass navbar using CSS backdrop-filter with scroll event listener
+- Floating WhatsApp button with CSS pulse animation ring
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+A full 12-section showcase website for BrightMinds Academy, covering: Hero with animated stats, About, Courses with tab filtering, Faculty profiles, Why Choose Us, Achievements & Results, Testimonials, Photo Gallery, Branch Locations, FAQs, Contact Form, and Footer.
 
 ## User preferences
 
@@ -38,7 +48,8 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Google Fonts @import must be the FIRST line of index.css (before @import "tailwindcss")
+- Run codegen after every OpenAPI spec change
 
 ## Pointers
 
