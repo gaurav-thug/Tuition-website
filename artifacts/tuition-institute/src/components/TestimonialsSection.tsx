@@ -46,18 +46,18 @@ const TESTIMONIALS = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-24 bg-[#F4F7FE]">
+    <section id="testimonials" className="py-24 bg-[#F8FAFF]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+          <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
             WHAT THEY SAY
           </span>
-          <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6">
             Trusted by 5,000+ Students and Their Families
           </h2>
           
           <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-            <span className="font-bold text-[#0D1B3E]">4.9/5</span>
+            <span className="font-bold text-[#0F1C3F]">4.9/5</span>
             <div className="flex text-[#F59E0B]">
               <Star size={16} fill="currentColor" stroke="none" />
               <Star size={16} fill="currentColor" stroke="none" />
@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
               transition={{ delay: idx * 0.1 }}
               className="break-inside-avoid bg-white p-8 rounded-[20px] shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300 relative"
             >
-              <div className="absolute top-6 right-6 text-[#1A56DB]/10">
+              <div className="absolute top-6 right-6 text-[#1E40AF]/10">
                 <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                 </svg>
@@ -124,7 +124,7 @@ export default function TestimonialsSection() {
                   <img src={testimonial.image} onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=100&q=80" }} alt={testimonial.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#0D1B3E] flex items-center gap-1">
+                  <h4 className="font-bold text-[#0F1C3F] flex items-center gap-1">
                     {testimonial.name}
                   </h4>
                   <p className="text-xs text-gray-500 font-medium flex items-center gap-1">

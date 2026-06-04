@@ -9,7 +9,7 @@ const FACULTY = [
     experience: "15+ Years Experience",
     bio: "Expert in simplifying complex algebraic and calculus concepts for competitive exams.",
     image: "/faculty-math.png",
-    color: "#1A56DB"
+    color: "#1E40AF"
   },
   {
     id: 2,
@@ -68,10 +68,10 @@ export default function FacultySection() {
     <section id="faculty" className="py-24 bg-[#F4F7FE]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+          <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
             MEET THE TEAM
           </span>
-          <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6">
             Learn from the Best — Experienced, Passionate Educators
           </h2>
           <p className="text-gray-600 text-lg">
@@ -116,7 +116,7 @@ export default function FacultySection() {
                   />
                 </div>
                 
-                <h3 className="text-xl font-bold text-[#0D1B3E] mb-2">{member.name}</h3>
+                <h3 className="text-xl font-bold text-[#0F1C3F] mb-2">{member.name}</h3>
                 
                 <span 
                   className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
@@ -126,7 +126,7 @@ export default function FacultySection() {
                 </span>
                 
                 <div className="text-sm text-gray-500 font-medium mb-1">{member.qualification}</div>
-                <div className="text-sm text-[#1A56DB] font-bold mb-4">{member.experience}</div>
+                <div className="text-sm text-[#1E40AF] font-bold mb-4">{member.experience}</div>
                 
                 <p className="text-sm text-gray-600 line-clamp-2">
                   {member.bio}

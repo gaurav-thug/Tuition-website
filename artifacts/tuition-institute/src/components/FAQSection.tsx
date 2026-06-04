@@ -50,10 +50,10 @@ export default function FAQSection() {
           {/* Left Column */}
           <div>
             <div className="sticky top-32">
-              <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+              <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
                 COMMON QUESTIONS
               </span>
-              <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6">
                 Everything You Need to Know
               </h2>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
@@ -61,7 +61,7 @@ export default function FAQSection() {
               </p>
               
               <div className="bg-[#F4F7FE] p-8 rounded-2xl border border-blue-100">
-                <h3 className="font-bold text-[#0D1B3E] text-xl mb-2">Still have questions?</h3>
+                <h3 className="font-bold text-[#0F1C3F] text-xl mb-2">Still have questions?</h3>
                 <p className="text-gray-600 mb-6 text-sm">
                   Our academic counselors are ready to help you make the best decision for your child's future.
                 </p>
@@ -83,9 +83,9 @@ export default function FAQSection() {
                 <AccordionItem 
                   key={idx} 
                   value={`item-${idx}`}
-                  className="bg-white border border-gray-200 rounded-xl px-6 data-[state=open]:border-[#1A56DB] data-[state=open]:border-l-4 data-[state=open]:shadow-md transition-all duration-300"
+                  className="bg-white border border-gray-200 rounded-xl px-6 data-[state=open]:border-[#1E40AF] data-[state=open]:border-l-4 data-[state=open]:shadow-md transition-all duration-300"
                 >
-                  <AccordionTrigger className="text-left font-bold text-[#0D1B3E] text-lg hover:no-underline py-6">
+                  <AccordionTrigger className="text-left font-bold text-[#0F1C3F] text-lg hover:no-underline py-6">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600 leading-relaxed pb-6 text-base">

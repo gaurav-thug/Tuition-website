@@ -12,7 +12,7 @@ const COURSES = [
     boards: ["CBSE", "ICSE", "State Board"],
     classes: "Classes 6 to 12",
     icon: Calculator,
-    color: "#1A56DB",
+    color: "#1E40AF",
     bgColor: "#EFF6FF",
     highlights: ["Concept-based teaching", "Weekly assessments", "Previous year papers"]
   },
@@ -84,10 +84,10 @@ export default function CoursesSection() {
     <section id="courses" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+          <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
             WHAT WE TEACH
           </span>
-          <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6">
             Comprehensive Coaching Across All Subjects & Boards
           </h2>
           <p className="text-gray-600 text-lg">
@@ -103,7 +103,7 @@ export default function CoursesSection() {
               onClick={() => setActiveTab(category)}
               className={`whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
                 activeTab === category
-                  ? "bg-[#0D1B3E] text-white"
+                  ? "bg-[#0F1C3F] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
               data-testid={`tab-${category.replace(/\s+/g, '-').toLowerCase()}`}
@@ -143,14 +143,14 @@ export default function CoursesSection() {
                   <course.icon size={24} />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-[#0D1B3E] mb-3">{course.subject}</h3>
+                <h3 className="text-2xl font-bold text-[#0F1C3F] mb-3">{course.subject}</h3>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-md">
                     {course.classes}
                   </span>
                   {course.boards.map(board => (
-                    <span key={board} className="px-3 py-1 bg-blue-50 text-[#1A56DB] text-xs font-bold rounded-md">
+                    <span key={board} className="px-3 py-1 bg-blue-50 text-[#1E40AF] text-xs font-bold rounded-md">
                       {board}
                     </span>
                   ))}

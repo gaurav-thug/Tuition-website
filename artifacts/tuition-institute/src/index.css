@@ -68,13 +68,15 @@
 }
 
 :root {
-  --primary-blue: #1A56DB;
-  --deep-navy: #0D1B3E;
-  --sky-accent: #60A5FA;
+  --primary-blue: #1E40AF;
+  --orange-accent: #F97316;
+  --deep-navy: #0F1C3F;
+  --light-blue-bg: #EFF6FF;
+  --sky-accent: #93C5FD;
   --success-green: #10B981;
   --gold-accent: #F59E0B;
   --muted-text: #64748B;
-  --soft-gray: #F4F7FE;
+  --soft-gray: #F8FAFF;
 
   --font-display: 'Playfair Display', serif;
   --font-body: 'DM Sans', sans-serif;
@@ -84,20 +86,20 @@
   --app-font-serif: 'Playfair Display', serif;
 
   --background: 0 0% 100%;
-  --foreground: 222 72% 15%;
-  --primary: 221 75% 48%;
+  --foreground: 224 71% 15%;
+  --primary: 224 71% 40%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 220 33% 97%;
-  --secondary-foreground: 222 72% 15%;
-  --muted: 220 33% 97%;
+  --secondary: 213 100% 97%;
+  --secondary-foreground: 224 71% 15%;
+  --muted: 213 100% 97%;
   --muted-foreground: 215 16% 47%;
   --card: 0 0% 100%;
-  --card-foreground: 222 72% 15%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 221 75% 48%;
-  --accent: 213 97% 68%;
-  --accent-foreground: 222 72% 15%;
+  --card-foreground: 224 71% 15%;
+  --border: 213 40% 88%;
+  --input: 213 40% 88%;
+  --ring: 224 71% 40%;
+  --accent: 24 95% 53%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --sidebar: 0 0% 100%;
@@ -114,20 +116,20 @@
 
 .dark {
   --background: 0 0% 100%;
-  --foreground: 222 72% 15%;
-  --primary: 221 75% 48%;
+  --foreground: 224 71% 15%;
+  --primary: 224 71% 40%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 220 33% 97%;
-  --secondary-foreground: 222 72% 15%;
-  --muted: 220 33% 97%;
+  --secondary: 213 100% 97%;
+  --secondary-foreground: 224 71% 15%;
+  --muted: 213 100% 97%;
   --muted-foreground: 215 16% 47%;
   --card: 0 0% 100%;
-  --card-foreground: 222 72% 15%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 221 75% 48%;
-  --accent: 213 97% 68%;
-  --accent-foreground: 222 72% 15%;
+  --card-foreground: 224 71% 15%;
+  --border: 213 40% 88%;
+  --input: 213 40% 88%;
+  --ring: 224 71% 40%;
+  --accent: 24 95% 53%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --sidebar: 0 0% 100%;

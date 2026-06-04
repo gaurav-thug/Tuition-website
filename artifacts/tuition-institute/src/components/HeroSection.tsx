@@ -52,13 +52,13 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-32 pb-20 flex flex-col justify-center bg-[#0D1B3E] overflow-hidden"
+      className="relative min-h-screen pt-32 pb-20 flex flex-col justify-center bg-[#0F1C3F] overflow-hidden"
     >
       {/* Background gradients and patterns */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 80% 20%, rgba(26,86,219,0.4) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 80% 20%, rgba(30,64,175,0.4) 0%, transparent 60%)",
         }}
       />
       <div 
@@ -88,21 +88,36 @@ export default function HeroSection() {
               variants={itemVariants}
               className="font-serif text-white text-5xl md:text-6xl lg:text-[72px] leading-[1.1] font-bold mb-6"
             >
-              Where Every Student's Potential Becomes Their Achievement
+              Unlock Your Child's Academic Potential at Educare Academy
             </motion.h1>
             
             <motion.p 
               variants={itemVariants}
-              className="text-[#93C5FD] text-lg md:text-xl font-medium mb-10 max-w-2xl"
+              className="text-[#93C5FD] text-lg md:text-xl font-medium mb-8 max-w-2xl"
             >
-              Expert coaching for Classes 6–12 | CBSE | ICSE | State Board | Competitive Exams. Small batches. Big results.
+              Expert coaching for Classes 6–12, JEE, and NEET | CBSE | ICSE | State Board. Small batches. Big results.
             </motion.p>
             
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-sm">
+                <span className="text-[#10B981]">✓</span> Experienced Faculty
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-sm">
+                <span className="text-[#10B981]">✓</span> Small Batches (Max 15)
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-sm">
+                <span className="text-[#10B981]">✓</span> Result-Focused Learning
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-sm">
+                <span className="text-[#10B981]">✓</span> Free Notes Provided
+              </span>
+            </motion.div>
+            
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-4">
-              <a href="tel:+919876543210" className="px-8 py-4 rounded-full bg-white text-[#0D1B3E] font-bold hover:bg-gray-100 transition-colors flex items-center gap-2">
+              <a href="tel:+919876543210" className="px-8 py-4 rounded-full bg-white text-[#0F1C3F] font-bold hover:bg-gray-100 transition-colors flex items-center gap-2">
                 📞 Call Now
               </a>
-              <a href="https://wa.me/919876543210" className="px-8 py-4 rounded-full bg-[#10B981] text-white font-bold hover:bg-[#0ea5e9] transition-colors flex items-center gap-2">
+              <a href="https://wa.me/919876543210" className="px-8 py-4 rounded-full bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-colors flex items-center gap-2">
                 💬 WhatsApp Us
               </a>
               <a href="#contact" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors flex items-center gap-2">
@@ -125,17 +140,17 @@ export default function HeroSection() {
             <div className="relative rounded-[24px] overflow-hidden shadow-2xl border border-white/10">
               <img 
                 src="/hero-classroom.png" 
-                alt="BrightMinds Academy Classroom" 
+                alt="Educare Academy Classroom" 
                 className="w-full h-auto object-cover aspect-[4/5] md:aspect-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3E]/60 to-transparent mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F1C3F]/60 to-transparent mix-blend-multiply" />
             </div>
             
             <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl shadow-xl">
               <p className="text-white font-bold">98% Parent Satisfaction ⭐</p>
             </div>
             
-            <div className="absolute -top-4 -right-4 bg-[#1A56DB] text-white px-6 py-2 rounded-full shadow-lg font-medium border border-white/20">
+            <div className="absolute -top-4 -right-4 bg-[#1E40AF] text-white px-6 py-2 rounded-full shadow-lg font-medium border border-white/20">
               Science | Math | English
             </div>
           </motion.div>
@@ -150,25 +165,25 @@ export default function HeroSection() {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10">
             <div className="text-center px-4" ref={studentsCount.ref}>
-              <div className="font-number text-4xl md:text-[48px] font-bold text-[#60A5FA] mb-1">
+              <div className="font-number text-4xl md:text-[48px] font-bold text-[#F97316] mb-1">
                 {studentsCount.count}+
               </div>
               <div className="text-[#94A3B8] text-sm uppercase tracking-wider font-semibold">Students</div>
             </div>
             <div className="text-center px-4" ref={yearsCount.ref}>
-              <div className="font-number text-4xl md:text-[48px] font-bold text-[#60A5FA] mb-1">
+              <div className="font-number text-4xl md:text-[48px] font-bold text-[#F97316] mb-1">
                 {yearsCount.count}+
               </div>
               <div className="text-[#94A3B8] text-sm uppercase tracking-wider font-semibold">Years</div>
             </div>
             <div className="text-center px-4" ref={resultsCount.ref}>
-              <div className="font-number text-4xl md:text-[48px] font-bold text-[#60A5FA] mb-1">
+              <div className="font-number text-4xl md:text-[48px] font-bold text-[#F97316] mb-1">
                 {resultsCount.count}%
               </div>
               <div className="text-[#94A3B8] text-sm uppercase tracking-wider font-semibold">Results</div>
             </div>
             <div className="text-center px-4" ref={facultyCount.ref}>
-              <div className="font-number text-4xl md:text-[48px] font-bold text-[#60A5FA] mb-1">
+              <div className="font-number text-4xl md:text-[48px] font-bold text-[#F97316] mb-1">
                 {facultyCount.count}+
               </div>
               <div className="text-[#94A3B8] text-sm uppercase tracking-wider font-semibold">Faculty</div>

@@ -16,7 +16,7 @@ export default function AboutSection() {
             <div className="relative z-10 w-4/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <img 
                 src="/about-founder.png" 
-                alt="Founder of BrightMinds Academy" 
+                alt="Founder of Educare Academy" 
                 className="w-full h-auto object-cover aspect-[3/4]"
               />
             </div>
@@ -38,12 +38,12 @@ export default function AboutSection() {
               </div>
               <div>
                 <p className="text-sm text-gray-500 font-medium">Established</p>
-                <p className="text-xl font-bold text-[#0D1B3E] font-serif">2009</p>
+                <p className="text-xl font-bold text-[#0F1C3F] font-serif">2009</p>
               </div>
             </div>
             
             {/* Decorative Element */}
-            <div className="absolute -left-8 -top-8 w-32 h-32 bg-[radial-gradient(#1A56DB_2px,transparent_2px)] [background-size:16px_16px] opacity-20 -z-10" />
+            <div className="absolute -left-8 -top-8 w-32 h-32 bg-[radial-gradient(#1E40AF_2px,transparent_2px)] [background-size:16px_16px] opacity-20 -z-10" />
           </motion.div>
 
           {/* Right Content */}
@@ -53,49 +53,49 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
-            <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block" data-testid="about-label">
+            <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block" data-testid="about-label">
               WHO WE ARE
             </span>
-            <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              15 Years of Shaping Bright Futures
+            <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              15 Years of Academic Excellence
             </h2>
             
             <div className="space-y-4 text-gray-600 mb-8 text-lg leading-relaxed">
               <p>
-                At BrightMinds Academy, we believe that every student has the potential to achieve greatness when provided with the right guidance, environment, and mentorship.
+                At Educare Academy, we believe that every student has the potential to achieve greatness when provided with the right guidance, environment, and mentorship.
               </p>
               <p>
                 Founded on the principles of personalized education, we have transitioned from a single classroom setup to one of the most trusted coaching institutes in the city, consistently producing top-tier results across all major boards and competitive examinations.
               </p>
             </div>
 
-            <div className="bg-[#EFF6FF] border-l-4 border-[#1A56DB] p-6 rounded-r-xl mb-8">
-              <p className="font-serif italic text-xl text-[#0D1B3E] mb-2">
+            <div className="bg-[#EFF6FF] border-l-4 border-[#1E40AF] p-6 rounded-r-xl mb-8">
+              <p className="font-serif italic text-xl text-[#0F1C3F] mb-2">
                 "Our goal is not just to teach subjects, but to ignite a lifelong passion for learning."
               </p>
-              <p className="text-sm font-semibold text-[#1A56DB]">
-                — Founder, BrightMinds Academy
+              <p className="text-sm font-semibold text-[#1E40AF]">
+                — Founder, Educare Academy
               </p>
             </div>
 
             <div className="grid grid-cols-3 gap-4 mb-8">
               <div>
-                <p className="font-number text-2xl font-bold text-[#0D1B3E]">15+ Years</p>
+                <p className="font-number text-2xl font-bold text-[#0F1C3F]">15+ Years</p>
                 <p className="text-sm text-gray-500 font-medium">Excellence</p>
               </div>
               <div>
-                <p className="font-number text-2xl font-bold text-[#0D1B3E]">5,000+</p>
+                <p className="font-number text-2xl font-bold text-[#0F1C3F]">5,000+</p>
                 <p className="text-sm text-gray-500 font-medium">Students</p>
               </div>
               <div>
-                <p className="font-number text-2xl font-bold text-[#0D1B3E]">3</p>
+                <p className="font-number text-2xl font-bold text-[#0F1C3F]">3</p>
                 <p className="text-sm text-gray-500 font-medium">Branches</p>
               </div>
             </div>
 
             <a 
               href="#faculty" 
-              className="inline-flex items-center text-[#1A56DB] font-bold hover:text-[#0D1B3E] transition-colors group"
+              className="inline-flex items-center text-[#1E40AF] font-bold hover:text-[#0F1C3F] transition-colors group"
               data-testid="meet-faculty-link"
             >
               Meet Our Faculty 

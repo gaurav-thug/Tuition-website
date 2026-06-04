@@ -39,10 +39,10 @@ export default function WhyChooseUs() {
     <section id="why" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+          <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
             OUR ADVANTAGE
           </span>
-          <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6">
             The Smart Choice for Your Child's Academic Success
           </h2>
         </div>
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
                 alt="Modern Classroom Facility" 
                 className="w-full h-auto aspect-square md:aspect-[4/3] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0D1B3E]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0F1C3F]/40 to-transparent" />
             </div>
 
             {/* Floating Award Badge */}
@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
                   <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
                 </svg>
               </div>
-              <h4 className="text-[#0D1B3E] font-bold leading-tight">Top Coaching Institute</h4>
+              <h4 className="text-[#0F1C3F] font-bold leading-tight">Top Coaching Institute</h4>
               <p className="text-sm text-gray-500 mt-1 font-medium">City Award 2023</p>
             </div>
           </motion.div>
@@ -92,10 +92,10 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#EFF6FF] text-[#1A56DB] flex items-center justify-center mb-5 shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-[#EFF6FF] text-[#1E40AF] flex items-center justify-center mb-5 shadow-sm">
                   <feature.icon size={28} strokeWidth={2} />
                 </div>
-                <h3 className="text-xl font-bold text-[#0D1B3E] mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-[#0F1C3F] mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}

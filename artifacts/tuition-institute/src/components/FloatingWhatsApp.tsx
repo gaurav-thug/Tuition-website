@@ -34,7 +34,7 @@ export default function FloatingWhatsApp() {
 
       {/* Button */}
       <a 
-        href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20admissions"
+        href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20admissions%20at%20Educare%20Academy"
         target="_blank"
         rel="noreferrer"
         className="relative group block"

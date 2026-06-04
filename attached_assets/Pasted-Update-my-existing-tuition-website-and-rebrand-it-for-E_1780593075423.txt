@@ -1,0 +1,112 @@
+Update my existing tuition website and rebrand it for Educare Academy using the uploaded logo
+
+Use the logo colors as the main theme
+Primary color deep royal blue
+Secondary color bright orange
+Background should be clean white and light blue
+Make the website look modern premium trustworthy and mobile responsive
+
+Changes required
+
+1. Replace the old institute name everywhere with Educare Academy
+
+2. Add the uploaded Educare Academy logo in the navbar footer and suitable branding areas
+
+3. Change the full website color combination to match the logo using blue orange and white
+
+4. Put Google Maps at the very top of the website before the hero section
+   Create a large map section with a placeholder embedded map and a button saying Get Directions
+   Below the map add quick buttons for Call Now WhatsApp and Visit Centre
+
+5. Create a professional hero section after the map
+   Add headline for Educare Academy
+   Add short tagline
+   Add call to action buttons
+   Add trust badges like Experienced Faculty Small Batches Result Focused Learning
+
+6. Add a Notes section with this structure
+
+CBSE
+Class 9
+Maths
+Chapter wise Notes
+Chapter wise Questions
+Science
+Chapter wise Notes
+Chapter wise Questions
+
+Class 10
+Maths
+Chapter wise Notes
+Chapter wise Questions
+Science
+Chapter wise Notes
+Chapter wise Questions
+
+Class 11
+Physics
+Chemistry
+Maths
+Biology
+
+Class 12
+Physics
+Chemistry
+Maths
+Biology
+
+JEE
+Physics
+Chemistry
+Maths
+
+NEET
+Physics
+Chemistry
+Biology
+
+Make this notes section look clean and organized with cards accordions tabs or dropdowns
+For now add placeholder download buttons for notes and questions
+Make it easy to replace placeholder links with real PDF links later
+
+7. Add an Achievers section
+   This section should show successful past students who studied from this tuition
+   Use modern profile cards with photo placeholder name achievement job college or position and short description
+   Example achievers can include IIT student software engineer doctor chartered accountant government officer
+   Use placeholder data for now
+
+8. Add a Results section separate from Achievers
+   Show recent academic results with student name class percentage subject and year
+   Use modern result cards and animated number counters
+
+9. Add animated stats counters
+   Examples
+   Years of Experience
+   Students Taught
+   Happy Parents
+   Success Rate
+   Notes Available
+
+10. Add smooth animations throughout the website
+    Use scroll reveal animations
+    Card hover animations
+    Smooth counter animations
+    Soft blur background effects
+    Button hover effects
+    Modern section transitions
+
+11. Add floating WhatsApp button at bottom right
+    It should stay visible on all pages and look professional
+
+12. Improve the overall UI UX
+    Make spacing better
+    Make cards modern
+    Make typography clean
+    Make the site look premium and trustworthy
+    Make all sections responsive on mobile tablet and desktop
+
+13. Keep the code clean and easy to edit later
+    Use simple placeholder data arrays for notes achievers results and contact details so I can update them easily later
+
+Do not remove important existing sections like faculty reviews gallery contact and about
+Just improve and rebrand the website according to Educare Academy and add the new required sections

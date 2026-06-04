@@ -36,7 +36,7 @@ export default function AchievementsSection() {
   const years = useCountUp(15);
 
   return (
-    <section id="results" className="py-24 bg-[#0D1B3E] relative overflow-hidden">
+    <section id="board-results" className="py-24 bg-[#0F1C3F] relative overflow-hidden">
       {/* Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-5 pointer-events-none"
@@ -48,11 +48,11 @@ export default function AchievementsSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#60A5FA] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+          <span className="text-[#93C5FD] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
             OUR TRACK RECORD
           </span>
           <h2 className="font-serif text-white text-4xl md:text-5xl font-bold mb-6">
-            Results That Speak Louder Than Words
+            Board Results & Statistics
           </h2>
         </div>
 
@@ -72,7 +72,7 @@ export default function AchievementsSection() {
               transition={{ delay: idx * 0.1 }}
               className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center"
             >
-              <div ref={stat.ref} className="font-number text-4xl md:text-5xl font-bold text-[#F59E0B] mb-2">
+              <div ref={stat.ref} className="font-number text-4xl md:text-5xl font-bold text-[#F97316] mb-2">
                 {stat.val}{stat.suffix}
               </div>
               <div className="text-blue-100 text-sm md:text-base font-medium">{stat.label}</div>
@@ -107,7 +107,7 @@ export default function AchievementsSection() {
                 </div>
                 
                 <h4 className="text-xl font-bold text-white mb-1">{topper.name}</h4>
-                <div className="font-number text-4xl font-bold text-[#F59E0B] mb-4">{topper.score}</div>
+                <div className="font-number text-4xl font-bold text-[#F97316] mb-4">{topper.score}</div>
                 <div className="text-blue-200 text-sm font-medium">{topper.subject}</div>
                 <div className="text-white/50 text-xs mt-1">Batch of {topper.year}</div>
               </motion.div>
@@ -118,7 +118,7 @@ export default function AchievementsSection() {
         {/* Board Results Table */}
         <div className="bg-white rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
           <div className="bg-[#EFF6FF] px-6 py-4 border-b border-blue-100">
-            <h4 className="text-lg font-bold text-[#0D1B3E]">Overall Board Results 2023</h4>
+            <h4 className="text-lg font-bold text-[#0F1C3F]">Overall Board Results 2023</h4>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
@@ -138,10 +138,10 @@ export default function AchievementsSection() {
                   { board: "State Board 12", appeared: 310, passed: "98.5%", dist: "75%" }
                 ].map((row, idx) => (
                   <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4 font-bold text-[#0D1B3E]">{row.board}</td>
+                    <td className="px-6 py-4 font-bold text-[#0F1C3F]">{row.board}</td>
                     <td className="px-6 py-4 text-gray-600">{row.appeared}</td>
                     <td className="px-6 py-4 text-[#10B981] font-bold">{row.passed}</td>
-                    <td className="px-6 py-4 text-[#1A56DB] font-bold">{row.dist}</td>
+                    <td className="px-6 py-4 text-[#1E40AF] font-bold">{row.dist}</td>
                   </tr>
                 ))}
               </tbody>

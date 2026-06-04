@@ -67,10 +67,10 @@ export default function ContactSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+          <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
             GET IN TOUCH
           </span>
-          <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6">
             Start Your Child's Success Journey Today
           </h2>
         </div>
@@ -79,15 +79,15 @@ export default function ContactSection() {
           
           {/* Left Form */}
           <div className="bg-white rounded-[24px] p-8 md:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 relative">
-            <h3 className="text-2xl font-bold text-[#0D1B3E] mb-6">Book a Free Demo Class</h3>
+            <h3 className="text-2xl font-bold text-[#0F1C3F] mb-6">Book a Free Demo Class</h3>
             
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" data-testid="contact-form">
               <div className="grid md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0D1B3E]">Full Name <span className="text-red-500">*</span></label>
+                  <label className="text-sm font-bold text-[#0F1C3F]">Full Name <span className="text-red-500">*</span></label>
                   <input 
                     {...form.register("fullName")}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1E40AF] focus:ring-2 focus:ring-[#1E40AF]/20 outline-none transition-all"
                     placeholder="Enter parent or student name"
                   />
                   {form.formState.errors.fullName && (
@@ -96,10 +96,10 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0D1B3E]">Phone Number <span className="text-red-500">*</span></label>
+                  <label className="text-sm font-bold text-[#0F1C3F]">Phone Number <span className="text-red-500">*</span></label>
                   <input 
                     {...form.register("phone")}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1E40AF] focus:ring-2 focus:ring-[#1E40AF]/20 outline-none transition-all"
                     placeholder="10-digit mobile number"
                   />
                   {form.formState.errors.phone && (
@@ -110,10 +110,10 @@ export default function ContactSection() {
 
               <div className="grid md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0D1B3E]">Student Class <span className="text-red-500">*</span></label>
+                  <label className="text-sm font-bold text-[#0F1C3F]">Student Class <span className="text-red-500">*</span></label>
                   <select 
                     {...form.register("studentClass")}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/20 outline-none transition-all appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1E40AF] focus:ring-2 focus:ring-[#1E40AF]/20 outline-none transition-all appearance-none"
                   >
                     <option value="" disabled>Select Class</option>
                     <option value="Class 6">Class 6</option>
@@ -130,10 +130,10 @@ export default function ContactSection() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0D1B3E]">Subject / Course <span className="text-red-500">*</span></label>
+                  <label className="text-sm font-bold text-[#0F1C3F]">Subject / Course <span className="text-red-500">*</span></label>
                   <select 
                     {...form.register("subject")}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/20 outline-none transition-all appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1E40AF] focus:ring-2 focus:ring-[#1E40AF]/20 outline-none transition-all appearance-none"
                   >
                     <option value="" disabled>Select Subject</option>
                     <option value="Mathematics">Mathematics</option>
@@ -150,10 +150,10 @@ export default function ContactSection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-[#0D1B3E]">Preferred Branch</label>
+                <label className="text-sm font-bold text-[#0F1C3F]">Preferred Branch</label>
                 <select 
                   {...form.register("branch")}
-                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/20 outline-none transition-all appearance-none"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1E40AF] focus:ring-2 focus:ring-[#1E40AF]/20 outline-none transition-all appearance-none"
                 >
                   <option value="">Select Branch (Optional)</option>
                   <option value="Main Branch">Main Branch - Sector 18</option>
@@ -163,11 +163,11 @@ export default function ContactSection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-[#0D1B3E]">Message</label>
+                <label className="text-sm font-bold text-[#0F1C3F]">Message</label>
                 <textarea 
                   {...form.register("message")}
                   rows={3}
-                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/20 outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#1E40AF] focus:ring-2 focus:ring-[#1E40AF]/20 outline-none transition-all resize-none"
                   placeholder="Any specific requirements or questions?"
                 />
               </div>
@@ -175,7 +175,7 @@ export default function ContactSection() {
               <button 
                 type="submit" 
                 disabled={submitInquiry.isPending}
-                className="w-full h-14 rounded-xl bg-[#1A56DB] text-white font-bold flex items-center justify-center gap-2 hover:bg-[#0D1B3E] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full h-14 rounded-xl bg-[#1E40AF] text-white font-bold flex items-center justify-center gap-2 hover:bg-[#0F1C3F] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 data-testid="button-submit-inquiry"
               >
                 {submitInquiry.isPending ? (
@@ -196,7 +196,7 @@ export default function ContactSection() {
           {/* Right Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-[#0D1B3E] mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-[#0F1C3F] mb-6">Contact Information</h3>
               <p className="text-gray-600 mb-8">
                 Reach out to us directly or visit any of our branches. Our counselors are available Monday to Saturday.
               </p>
@@ -204,59 +204,59 @@ export default function ContactSection() {
 
             <div className="space-y-6">
               <a href="tel:+919876543210" className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1A56DB] flex items-center justify-center group-hover:bg-[#1A56DB] group-hover:text-white transition-colors shrink-0">
+                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1E40AF] flex items-center justify-center group-hover:bg-[#1E40AF] group-hover:text-white transition-colors shrink-0">
                   <Phone size={20} />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Phone</p>
-                  <p className="text-[#0D1B3E] font-bold text-lg">+91 98765 43210</p>
+                  <p className="text-[#0F1C3F] font-bold text-lg">+91 98765 43210</p>
                 </div>
               </a>
 
-              <a href="mailto:admissions@brightminds.edu.in" className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1A56DB] flex items-center justify-center group-hover:bg-[#1A56DB] group-hover:text-white transition-colors shrink-0">
+              <a href="mailto:admissions@educare.edu.in" className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1E40AF] flex items-center justify-center group-hover:bg-[#1E40AF] group-hover:text-white transition-colors shrink-0">
                   <Mail size={20} />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Email</p>
-                  <p className="text-[#0D1B3E] font-bold">admissions@brightminds.edu.in</p>
+                  <p className="text-[#0F1C3F] font-bold">admissions@educare.edu.in</p>
                 </div>
               </a>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1A56DB] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1E40AF] flex items-center justify-center shrink-0">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Main Branch</p>
-                  <p className="text-[#0D1B3E] font-medium leading-relaxed">42 Knowledge Park, Sector 18<br/>City Center, 123456</p>
+                  <p className="text-[#0F1C3F] font-medium leading-relaxed">42 Knowledge Park, Sector 18<br/>City Center, 123456</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1A56DB] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-full bg-[#F4F7FE] text-[#1E40AF] flex items-center justify-center shrink-0">
                   <Clock size={20} />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Working Hours</p>
-                  <p className="text-[#0D1B3E] font-medium">Monday – Saturday<br/>8:00 AM – 7:00 PM</p>
+                  <p className="text-[#0F1C3F] font-medium">Monday – Saturday<br/>8:00 AM – 7:00 PM</p>
                 </div>
               </div>
             </div>
 
             <div className="pt-8 border-t border-gray-100">
-              <p className="text-sm font-bold text-[#0D1B3E] mb-4">Follow Us on Social Media</p>
+              <p className="text-sm font-bold text-[#0F1C3F] mb-4">Follow Us on Social Media</p>
               <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 rounded-full bg-[#0D1B3E] text-white flex items-center justify-center hover:bg-[#1A56DB] transition-colors">
+                <a href="#" className="w-10 h-10 rounded-full bg-[#0F1C3F] text-white flex items-center justify-center hover:bg-[#1E40AF] transition-colors">
                   <FaInstagram size={18} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[#0D1B3E] text-white flex items-center justify-center hover:bg-[#1A56DB] transition-colors">
+                <a href="#" className="w-10 h-10 rounded-full bg-[#0F1C3F] text-white flex items-center justify-center hover:bg-[#1E40AF] transition-colors">
                   <FaFacebookF size={18} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[#0D1B3E] text-white flex items-center justify-center hover:bg-[#1A56DB] transition-colors">
+                <a href="#" className="w-10 h-10 rounded-full bg-[#0F1C3F] text-white flex items-center justify-center hover:bg-[#1E40AF] transition-colors">
                   <FaYoutube size={18} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[#0D1B3E] text-white flex items-center justify-center hover:bg-[#1A56DB] transition-colors">
+                <a href="#" className="w-10 h-10 rounded-full bg-[#0F1C3F] text-white flex items-center justify-center hover:bg-[#1E40AF] transition-colors">
                   <SiGooglemaps size={18} />
                 </a>
               </div>

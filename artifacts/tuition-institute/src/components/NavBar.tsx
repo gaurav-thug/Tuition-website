@@ -19,7 +19,9 @@ export default function NavBar() {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Courses", href: "#courses" },
+    { name: "Notes", href: "#notes" },
     { name: "Faculty", href: "#faculty" },
+    { name: "Achievers", href: "#achievers" },
     { name: "Results", href: "#results" },
     { name: "Gallery", href: "#gallery" },
     { name: "Contact", href: "#contact" },
@@ -27,41 +29,29 @@ export default function NavBar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-[20px] shadow-sm py-3"
-          : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-[20px] border-b border-gray-100 ${
+        scrolled ? "shadow-md py-3" : "shadow-sm py-4"
       }`}
       data-testid="navbar"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex flex-col" data-testid="link-logo">
-            <span
-              className={`font-serif text-2xl font-bold ${
-                scrolled ? "text-[#0D1B3E]" : "text-white"
-              }`}
-            >
-              BrightMinds Academy
+            <span className="font-serif text-2xl font-bold text-[#0F1C3F]">
+              Educare Academy
             </span>
-            <span
-              className={`text-[10px] uppercase tracking-wider ${
-                scrolled ? "text-[#1A56DB]" : "text-blue-200"
-              }`}
-            >
-              Excellence in Education
+            <span className="text-[10px] uppercase tracking-wider text-[#1E40AF]">
+              Learn Today. Lead Tomorrow.
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium hover:text-[#1A56DB] transition-colors ${
-                  scrolled ? "text-[#64748B]" : "text-white/90"
-                }`}
+                className="text-sm font-medium text-[#64748B] hover:text-[#1E40AF] transition-colors"
                 data-testid={`nav-link-${link.name.toLowerCase()}`}
               >
                 {link.name}
@@ -73,11 +63,7 @@ export default function NavBar() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+919876543210"
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold border transition-all ${
-                scrolled
-                  ? "border-[#0D1B3E] text-[#0D1B3E] hover:bg-[#0D1B3E] hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-[#0D1B3E]"
-              }`}
+              className="px-5 py-2.5 rounded-full text-sm font-semibold border border-[#1E40AF] text-[#1E40AF] hover:bg-[#1E40AF] hover:text-white transition-all"
               data-testid="nav-call-btn"
             >
               Call Now
@@ -96,9 +82,7 @@ export default function NavBar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={`lg:hidden p-2 rounded-md ${
-              scrolled ? "text-[#0D1B3E]" : "text-white"
-            }`}
+            className="lg:hidden p-2 rounded-md text-[#0F1C3F]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             data-testid="mobile-menu-toggle"
           >
@@ -117,7 +101,7 @@ export default function NavBar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-[#0D1B3E] font-medium py-2 border-b border-gray-100"
+              className="text-[#0F1C3F] font-medium py-2 border-b border-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
@@ -126,7 +110,7 @@ export default function NavBar() {
           <div className="flex flex-col gap-3 mt-2">
             <a
               href="tel:+919876543210"
-              className="text-center px-5 py-3 rounded-full text-sm font-semibold border border-[#0D1B3E] text-[#0D1B3E]"
+              className="text-center px-5 py-3 rounded-full text-sm font-semibold border border-[#1E40AF] text-[#1E40AF]"
             >
               Call Now
             </a>

@@ -7,7 +7,7 @@ const BRANCHES = [
     address: "42 Knowledge Park, Sector 18, City Center",
     phone: "+91 98765 43210",
     timings: "Mon-Sat: 8:00 AM - 8:00 PM",
-    color: "#1A56DB",
+    color: "#1E40AF",
     bg: "#EFF6FF"
   },
   {
@@ -33,10 +33,10 @@ export default function BranchesSection() {
     <section id="branches" className="py-24 bg-[#F4F7FE]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#1A56DB] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
+          <span className="text-[#1E40AF] uppercase tracking-[0.08em] font-bold text-[13px] mb-4 block">
             FIND US
           </span>
-          <h2 className="font-serif text-[#0D1B3E] text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-[#0F1C3F] text-4xl md:text-5xl font-bold mb-6">
             Multiple Branches — Convenient to You
           </h2>
         </div>
@@ -54,15 +54,15 @@ export default function BranchesSection() {
                  style={{ backgroundImage: 'linear-gradient(#E2E8F0 1px, transparent 1px), linear-gradient(90deg, #E2E8F0 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                  
             <div className="relative z-10 flex flex-col items-center">
-              <div className="w-16 h-16 bg-[#EFF6FF] text-[#1A56DB] rounded-full flex items-center justify-center mb-4 shadow-lg">
+              <div className="w-16 h-16 bg-[#EFF6FF] text-[#1E40AF] rounded-full flex items-center justify-center mb-4 shadow-lg">
                 <MapPin size={32} />
               </div>
-              <h3 className="text-xl font-bold text-[#0D1B3E] mb-2">Interactive Map</h3>
+              <h3 className="text-xl font-bold text-[#0F1C3F] mb-2">Interactive Map</h3>
               <p className="text-gray-500 font-medium">Showing 3 Locations</p>
               
               <div className="mt-8 flex gap-4">
                 <div className="flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-[#1A56DB] shadow-[0_0_0_4px_rgba(26,86,219,0.2)] mb-2" />
+                  <div className="w-4 h-4 rounded-full bg-[#1E40AF] shadow-[0_0_0_4px_rgba(30,64,175,0.2)] mb-2" />
                   <span className="text-xs font-bold text-gray-500">Main</span>
                 </div>
                 <div className="flex flex-col items-center">
@@ -97,12 +97,12 @@ export default function BranchesSection() {
                   </span>
                 </div>
                 
-                <p className="text-[#0D1B3E] font-medium text-lg mb-6 leading-relaxed">
+                <p className="text-[#0F1C3F] font-medium text-lg mb-6 leading-relaxed">
                   {branch.address}
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  <a href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-3 text-gray-600 hover:text-[#1A56DB] transition-colors">
+                  <a href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-3 text-gray-600 hover:text-[#1E40AF] transition-colors">
                     <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center">
                       <Phone size={16} />
                     </div>
@@ -117,10 +117,10 @@ export default function BranchesSection() {
                 </div>
                 
                 <div className="flex gap-3 pt-4 border-t border-gray-100">
-                  <button className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-gray-200 text-[#0D1B3E] font-semibold text-sm hover:bg-gray-50 transition-colors">
+                  <button className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-gray-200 text-[#0F1C3F] font-semibold text-sm hover:bg-gray-50 transition-colors">
                     <Navigation size={16} /> Get Directions
                   </button>
-                  <a href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`} className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#0D1B3E] text-white font-semibold text-sm hover:bg-[#1A56DB] transition-colors">
+                  <a href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`} className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#0F1C3F] text-white font-semibold text-sm hover:bg-[#1E40AF] transition-colors">
                     <Phone size={16} /> Call Branch
                   </a>
                 </div>
