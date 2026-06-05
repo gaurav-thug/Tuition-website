@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, BookOpen, FileQuestion, ChevronDown, ChevronUp } from "lucide-react";
+import { BookOpen, FileQuestion, ChevronDown, ChevronUp, Search, X } from "lucide-react";
 
 type Chapter = { title: string; notes: string; qbank: string };
 type Subject = { name: string; icon: string; chapters: Chapter[] };
 type ClassGroup = { label: string; subjects: Subject[] };
 type Category = { id: string; label: string; color: string; icon: string; classes: ClassGroup[] };
+
+type SearchResult = {
+  chapter: Chapter;
+  categoryLabel: string;
+  categoryColor: string;
+  categoryIcon: string;
+  classLabel: string;
+  subjectName: string;
+  subjectIcon: string;
+};
 
 const ch = (title: string): Chapter => ({ title, notes: "#", qbank: "#" });
 
@@ -680,8 +690,84 @@ function ClassAccordion({ category }: { category: Category }) {
   );
 }
 
+function SearchResultsView({ results, query }: { results: SearchResult[]; query: string }) {
+  if (results.length === 0) {
+    return (
+      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-12 text-center">
+        <div className="text-5xl mb-4">🔍</div>
+        <p className="text-[#0F1C3F] font-bold text-lg mb-2">No chapters found for "{query}"</p>
+        <p className="text-gray-400 text-sm">Try a different keyword like "Trigonometry", "Gravitation", or "Cell Division".</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      <p className="text-sm text-gray-400 font-medium mb-4 px-1">
+        {results.length} chapter{results.length !== 1 ? "s" : ""} found
+      </p>
+      <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden divide-y divide-gray-50">
+        {results.map((r, idx) => (
+          <motion.div
+            key={`${r.categoryLabel}-${r.classLabel}-${r.subjectName}-${idx}`}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.15, delay: idx * 0.03 }}
+            className="flex items-center justify-between px-6 py-4 hover:bg-[#F8FAFF] transition-colors group"
+          >
+            <div className="flex items-center gap-4 flex-1 min-w-0">
+              <span className="text-xl shrink-0">{r.subjectIcon}</span>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-[#0F1C3F] truncate">{r.chapter.title}</p>
+                <p className="text-xs text-gray-400 mt-0.5 flex items-center gap-1">
+                  <span
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-white text-[10px] font-bold"
+                    style={{ backgroundColor: r.categoryColor }}
+                  >
+                    {r.categoryIcon} {r.categoryLabel}
+                  </span>
+                  <span className="text-gray-300">›</span>
+                  <span>{r.classLabel}</span>
+                  <span className="text-gray-300">›</span>
+                  <span>{r.subjectName}</span>
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 ml-4 shrink-0">
+              <a
+                href={r.chapter.notes}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all"
+                style={{ borderColor: r.categoryColor, color: r.categoryColor }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = r.categoryColor;
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
+                  (e.currentTarget as HTMLAnchorElement).style.color = r.categoryColor;
+                }}
+              >
+                <BookOpen size={12} />
+                Notes
+              </a>
+              <a
+                href={r.chapter.qbank}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-100 text-gray-600 border border-gray-200 hover:bg-gray-200 transition-colors"
+              >
+                <FileQuestion size={12} />
+                Q&nbsp;Bank
+              </a>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function NotesSection() {
   const [activeTab, setActiveTab] = useState<string>(NOTES_DATA[0].id);
+  const [search, setSearch] = useState("");
   const activeCategory = NOTES_DATA.find((c) => c.id === activeTab) || NOTES_DATA[0];
 
   const totalChapters = NOTES_DATA.reduce(
@@ -693,6 +779,34 @@ export default function NotesSection() {
       ),
     0
   );
+
+  const searchResults = useMemo<SearchResult[]>(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return [];
+    const results: SearchResult[] = [];
+    for (const cat of NOTES_DATA) {
+      for (const cls of cat.classes) {
+        for (const subj of cls.subjects) {
+          for (const chapter of subj.chapters) {
+            if (chapter.title.toLowerCase().includes(q)) {
+              results.push({
+                chapter,
+                categoryLabel: cat.label,
+                categoryColor: cat.color,
+                categoryIcon: cat.icon,
+                classLabel: cls.label,
+                subjectName: subj.name,
+                subjectIcon: subj.icon,
+              });
+            }
+          }
+        }
+      }
+    }
+    return results;
+  }, [search]);
+
+  const isSearching = search.trim().length > 0;
 
   return (
     <section id="notes" className="py-24 bg-[#F8FAFF]">
@@ -716,91 +830,150 @@ export default function NotesSection() {
           </p>
         </motion.div>
 
-        {/* Stats strip */}
+        {/* Search Bar */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-6 mb-12"
+          transition={{ delay: 0.05 }}
+          className="max-w-2xl mx-auto mb-8"
         >
-          {[
-            { val: `${totalChapters}+`, label: "Chapters Covered" },
-            { val: "CBSE, JEE, NEET", label: "All Major Exams" },
-            { val: "Free", label: "Notes & Q-Banks" },
-            { val: "PDF", label: "Easy Downloads" },
-          ].map((stat, i) => (
-            <div key={i} className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full border border-gray-100 shadow-sm">
-              <span className="font-bold text-[#1E40AF] text-sm">{stat.val}</span>
-              <span className="text-gray-400 text-sm">·</span>
-              <span className="text-gray-500 text-sm">{stat.label}</span>
-            </div>
-          ))}
+          <div className="relative">
+            <Search
+              size={18}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+            />
+            <input
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder={`Search any chapter… e.g. "Trigonometry", "Gravitation", "Cell Division"`}
+              className="w-full pl-11 pr-10 py-3.5 rounded-2xl border-2 border-gray-200 bg-white text-sm text-[#0F1C3F] placeholder-gray-400 outline-none transition-all focus:border-[#1E40AF] focus:shadow-[0_0_0_4px_#1E40AF18]"
+            />
+            {isSearching && (
+              <button
+                onClick={() => setSearch("")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                aria-label="Clear search"
+              >
+                <X size={16} />
+              </button>
+            )}
+          </div>
         </motion.div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {NOTES_DATA.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveTab(cat.id)}
-              className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-base transition-all duration-200"
-              style={{
-                backgroundColor: activeTab === cat.id ? cat.color : "#ffffff",
-                color: activeTab === cat.id ? "#ffffff" : "#64748B",
-                border: `2px solid ${activeTab === cat.id ? cat.color : "#E2E8F0"}`,
-                boxShadow:
-                  activeTab === cat.id ? `0 8px 24px -4px ${cat.color}40` : "none",
-              }}
-              data-testid={`category-tab-${cat.id}`}
-            >
-              <span className="text-xl leading-none">{cat.icon}</span>
-              {cat.label}
-            </button>
-          ))}
-        </div>
+        {/* Stats strip — hide when searching */}
+        {!isSearching && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="flex flex-wrap justify-center gap-6 mb-12"
+          >
+            {[
+              { val: `${totalChapters}+`, label: "Chapters Covered" },
+              { val: "CBSE, JEE, NEET", label: "All Major Exams" },
+              { val: "Free", label: "Notes & Q-Banks" },
+              { val: "PDF", label: "Easy Downloads" },
+            ].map((stat, i) => (
+              <div key={i} className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full border border-gray-100 shadow-sm">
+                <span className="font-bold text-[#1E40AF] text-sm">{stat.val}</span>
+                <span className="text-gray-400 text-sm">·</span>
+                <span className="text-gray-500 text-sm">{stat.label}</span>
+              </div>
+            ))}
+          </motion.div>
+        )}
 
-        {/* Content Card */}
-        <div className="max-w-4xl mx-auto">
-          <AnimatePresence mode="wait">
+        {/* Search Results OR normal tabs+accordion */}
+        <AnimatePresence mode="wait">
+          {isSearching ? (
             <motion.div
-              key={activeCategory.id}
-              initial={{ opacity: 0, y: 12 }}
+              key="search-results"
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.25 }}
-              className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 md:p-8"
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              {/* Category badge */}
-              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-gray-100">
-                <span className="text-3xl">{activeCategory.icon}</span>
-                <div>
-                  <h3 className="text-xl font-bold text-[#0F1C3F]">{activeCategory.label} Study Materials</h3>
-                  <p className="text-sm text-gray-400">
-                    {activeCategory.classes.reduce((a, c) => a + c.subjects.reduce((b, s) => b + s.chapters.length, 0), 0)} chapters across{" "}
-                    {activeCategory.classes.reduce((a, c) => a + c.subjects.length, 0)} subjects
-                  </p>
-                </div>
+              <SearchResultsView results={searchResults} query={search.trim()} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="browse"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {/* Category Tabs */}
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                {NOTES_DATA.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveTab(cat.id)}
+                    className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-base transition-all duration-200"
+                    style={{
+                      backgroundColor: activeTab === cat.id ? cat.color : "#ffffff",
+                      color: activeTab === cat.id ? "#ffffff" : "#64748B",
+                      border: `2px solid ${activeTab === cat.id ? cat.color : "#E2E8F0"}`,
+                      boxShadow:
+                        activeTab === cat.id ? `0 8px 24px -4px ${cat.color}40` : "none",
+                    }}
+                    data-testid={`category-tab-${cat.id}`}
+                  >
+                    <span className="text-xl leading-none">{cat.icon}</span>
+                    {cat.label}
+                  </button>
+                ))}
               </div>
 
-              <ClassAccordion category={activeCategory} />
+              {/* Content Card */}
+              <div className="max-w-4xl mx-auto">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeCategory.id}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.25 }}
+                    className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 md:p-8"
+                  >
+                    {/* Category badge */}
+                    <div className="flex items-center gap-3 mb-6 pb-5 border-b border-gray-100">
+                      <span className="text-3xl">{activeCategory.icon}</span>
+                      <div>
+                        <h3 className="text-xl font-bold text-[#0F1C3F]">{activeCategory.label} Study Materials</h3>
+                        <p className="text-sm text-gray-400">
+                          {activeCategory.classes.reduce((a, c) => a + c.subjects.reduce((b, s) => b + s.chapters.length, 0), 0)} chapters across{" "}
+                          {activeCategory.classes.reduce((a, c) => a + c.subjects.length, 0)} subjects
+                        </p>
+                      </div>
+                    </div>
+
+                    <ClassAccordion category={activeCategory} />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          )}
+        </AnimatePresence>
 
         {/* Bottom note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-10 text-center text-gray-400 text-sm"
-        >
-          💡 PDF links are updated regularly. All downloads are free for enrolled students.
-          <span className="mx-2">·</span>
-          <a href="#contact" className="text-[#1E40AF] font-semibold hover:underline">
-            Enroll to get notified when new chapters are added →
-          </a>
-        </motion.p>
+        {!isSearching && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-10 text-center text-gray-400 text-sm"
+          >
+            💡 PDF links are updated regularly. All downloads are free for enrolled students.
+            <span className="mx-2">·</span>
+            <a href="#contact" className="text-[#1E40AF] font-semibold hover:underline">
+              Enroll to get notified when new chapters are added →
+            </a>
+          </motion.p>
+        )}
       </div>
     </section>
   );
