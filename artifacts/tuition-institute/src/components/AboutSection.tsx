@@ -31,7 +31,7 @@ export default function AboutSection() {
             {/* Floating Badge */}
             <div className="absolute -bottom-6 left-12 z-30 bg-white px-6 py-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-[#FFFBEB] flex items-center justify-center text-[#F59E0B]">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 15l-2 5l9-5l-9-5l2 5Z"/>
                   <circle cx="12" cy="8" r="4"/>
                 </svg>
